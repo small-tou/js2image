@@ -6,7 +6,7 @@ var Js2Image = require("./index.js");
 //  console.log(struct)
 //})
 
-Js2Image.getCode("./resource/source.js","./resource/tree.png",{}).then(function(code){
+Js2Image.getCode("./resource/moment.js","./resource/tree.png",{}).then(function(code){
     console.log(code);
 })
 
