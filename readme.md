@@ -2,6 +2,10 @@
 
 image-to-js 是一个 用指定图片来把一个js源代码压缩成一个可视化形式的源代码的工具，它的特色是压缩后的代码仍可运行，而不是简单的拼成最终的图案。
 
+#压缩后的示例，亲测可用
+
+http://f2e.souche.com/assets/js/lib/jquery-2.1.1.min.xmas.js
+
 
 
 #全局命令使用
