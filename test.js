@@ -1,4 +1,4 @@
-var ImageToJS = require("./index.js");
+var Js2Image = require("./index.js");
 
 //var ImageToStruct = require("./utils/image-to-struct.js");
 ////test image to struct
@@ -6,7 +6,7 @@ var ImageToJS = require("./index.js");
 //  console.log(struct)
 //})
 
-ImageToJS.getCode("./resource/source.js","./resource/tree.png",{}).then(function(code){
+Js2Image.getCode("./resource/source.js","./resource/tree.png",{}).then(function(code){
     console.log(code);
 })
 

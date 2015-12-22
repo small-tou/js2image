@@ -17,7 +17,7 @@
     "type": "MIT",
     "url": "https://github.com/xinyu198736/image-to-js.git/blob/master/license.md"
   },
-  "name": "image-to-js",
+  "name": "js2image",
   "optionalDependencies": {},
   "repository": {
     "type": "git",
@@ -25,6 +25,6 @@
   },
   "version": "0.0.1",
   "bin": {
-    "image-to-js": "./bin/cli"
+    "js2image": "./bin/cli"
   }
 }

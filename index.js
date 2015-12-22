@@ -4,7 +4,7 @@ var JSMin = require("./utils/js-min.js");
 var KeepLine = require("./utils/keep-line.js");
 var Promise = require("bluebird");
 
-var ImageToJS = function(jsPath,imagePath,options,callback){
+var Js2Image = function(jsPath,imagePath,options,callback){
     ImageToStruct(imagePath,options).then(function(struct){
         JSMin(jsPath).then(function(code){
             //提取不换行的字符串
