@@ -25,6 +25,7 @@ var Js2Image = function(jsPath,imagePath,options,callback){
                             return;
                         }
                         var char_count = chars.length;
+                        //从lines里取出char_count数量的代码来填充,不一定精准,要确保断行正确
                         var l = pickFromLines(lines,char_count);
 
                         r = r.replace(chars,function(){

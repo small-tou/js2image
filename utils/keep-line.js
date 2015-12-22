@@ -31,28 +31,10 @@ var result = {}
  */
 var PREFIX = "pic_and_code_to_ascii_"
 var placeholderIndex = 0;
-var double_operator = [
-    "==",
-    ">=",
-    "<=",
-    "+=",
-    "-=",
-    "*=",
-    "/=",
-    "%=",
-    "++",
-    "--",
-    "&&",
-    "||",
-">>",
-"<<"]
-var three_operator = [
-    '===',
-    '!==']
+var double_operator = ["==", ">=", "<=", "+=", "-=", "*=", "/=", "%=", "++", "--", "&&", "||", ">>", "<<"]
+var three_operator = ['===', '!==']
 
-var other_operator = [
-    'return function',
-    'throw new Error']
+var other_operator = ['return function', 'throw new Error']
 /**
  return o.call(e,t)
  return!c(n,e)
@@ -70,7 +52,7 @@ var other_operator = [
 var reg_operator = [
     {
         start:"return",
-        reg:/^return[^a-zA-Z_0-1"'][a-zA-Z_0-1.]+/
+        reg:/^return[^a-zA-Z_0-1"'][a-zA-Z_0-1.]+/ // return 0.1 或者 return function 或者return aaabb
     },
     {
         start:"return\"",
@@ -82,7 +64,7 @@ var reg_operator = [
     },
     {
         start:"throw",
-        reg:/^throw [a-zA-Z_0-1]+?/
+        reg:/^throw [a-zA-Z_0-1]+?/ //throw new 或者 throw obj
     }
 ]
 //向前补全 ddd++ 的情况

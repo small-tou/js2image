@@ -8,7 +8,9 @@ js2image 是一个可以把`js源代码`压缩成一个`ascii字符画`的源代
 
 http://f2e.souche.com/assets/js/lib/jquery-2.1.1.min.xmas.js
 
-#安装依赖
+另外,本项目resource目录中有多个已经跑通过的测试库文件.
+
+#安装依赖,本模块依赖系统模块:graphicsmagick
 
 ````
 # Ubuntu
@@ -40,7 +42,7 @@ npm install js2image -g; #全局使用
 * -r 是否反相图像
 * -i 指定使用的图片的路径，默认使用 ./resource/tree.png
 */
-js2image -s ./resource/source.js
+js2image -s ./resource/jquery.js
 ````
 
 
@@ -49,11 +51,11 @@ js2image -s ./resource/source.js
 ````
 var Js2Image = require("js2image");
 //获取结果的code
-Js2Image.getCode("./resource/source.js","./resource/tree.png",{}).then(function(code){
+Js2Image.getCode("./resource/jquery.js","./resource/tree.png",{}).then(function(code){
     console.log(code);
 })
 //或者直接写入文件
-Js2Image.writeToFile("./resource/source.js","./resource/tree.png",{}).then(function(code){
+Js2Image.writeToFile("./resource/jquery.js","./resource/tree.png",{}).then(function(code){
 
 });
 
