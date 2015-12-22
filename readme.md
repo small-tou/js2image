@@ -8,7 +8,23 @@ js2image 是一个可以把`js源代码`压缩成一个`ascii字符画`的源代
 
 http://f2e.souche.com/assets/js/lib/jquery-2.1.1.min.xmas.js
 
+#安装依赖
 
+````
+# Ubuntu
+$ sudo apt-get install graphicsmagick
+
+# Fedora
+$ sudo dnf install GraphicsMagick
+
+# OS X
+$ brew install graphicsmagick
+
+# Chocolatey (package manager for Windows)
+# (Restart of cmd/PowerShell is required)
+$ choco install graphicsmagick
+
+````
 
 #全局命令使用
 

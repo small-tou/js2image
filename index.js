@@ -7,10 +7,11 @@ var Promise = require("bluebird");
 var Js2Image = function(jsPath,imagePath,options,callback){
     ImageToStruct(imagePath,options).then(function(struct){
         JSMin(jsPath).then(function(code){
+            //fs.writeFileSync(jsPath.replace(".js",".min.js"),code,'utf-8')
             //提取不换行的字符串
             var hold_code = KeepLine.pickFromCode(code);
             //分离代码，以可分割单位拆分成数组。
-            var lines = hold_code.replace(/([^a-zA-Z_0-9=!|&])/g,"\n$1\n").split("\n");
+            var lines = hold_code.replace(/([^a-zA-Z_0-9=!|&$])/g,"\n$1\n").split("\n");
             //把分离后的代码里的占位符替换回代码。
             KeepLine.findBack(lines);
             var result = "";

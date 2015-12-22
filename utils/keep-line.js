@@ -39,6 +39,7 @@ var double_operator = [
     "-=",
     "*=",
     "/=",
+    "%=",
     "++",
     "--",
     "&&",
@@ -298,7 +299,7 @@ function pickFromCode(str){
                 //如果现在在字符串里
                 if(now_char=="\""){
                     //探测到字符串引号出现，首先判断不是转义的。
-                    if(last_char!="\\"){
+                    if(last_char!="\\"||(last_char=="\\"&&last_two_char=="\\"&&last_three_char!="\\")){
                         pickEnd_double = i;
                         is_in_double_quot = false;
                         strs.push({
@@ -325,7 +326,7 @@ function pickFromCode(str){
                 //如果现在在字符串里
                 if(now_char=="\'"){
                     //探测到字符串引号出现，首先判断不是转义的。
-                    if(last_char!="\\"){
+                    if(last_char!="\\"||(last_char=="\\"&&last_two_char=="\\"&&last_three_char!="\\")){
                         pickEnd_single = i;
                         is_in_single_quot = false;
                         strs.push({
@@ -460,10 +461,10 @@ var splitSingleQuot = function(str){
         if(s.charAt(last_cursor+l-1)=="x"&&s.charAt(last_cursor+l-2)=="\\"){
             l+=2;
         }
-        last_cursor = last_cursor+n.length;
         var n = s.substring(last_cursor,last_cursor+l)
+        last_cursor = last_cursor+n.length;
         n = n.replace(/☃/g,"\\\\");
-        r.push("\""+n+"\"")
+        r.push("\'"+n+"\'")
 
 
         r.push("+")

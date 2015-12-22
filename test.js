@@ -1,12 +1,10 @@
 var Js2Image = require("./index.js");
+var path = require("path");
+var source = "./resource/mustache.js";
+var image = path.join(__dirname,"./resource/tree.png");
+var out = source.replace(".js",".xmas.js");
 
-//var ImageToStruct = require("./utils/image-to-struct.js");
-////test image to struct
-//ImageToStruct("./tree.png",{},function(err,struct){
-//  console.log(struct)
-//})
+Js2Image.writeToFile(source,image,out,{reverse:true}).then(function(code){
 
-Js2Image.getCode("./resource/moment.js","./resource/tree.png",{}).then(function(code){
-    console.log(code);
-})
+});
 
