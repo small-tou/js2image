@@ -1,29 +1,15 @@
 #!/usr/bin/env node
 
-var program = require('commander'),
-    ImageToJS = require('../index.js'),
-    libInfo = require('../package');
 
-program
-    .version(libInfo.version)
+var ImageToJS = require('../index.js')
+var path = require("path");
+var argv = require('minimist')(process.argv.slice(2));
+var source = argv.s;
+var image = argv.i || path.join(__dirname,"../resource/tree.png");
+var out = argv.o || source.replace(".js",".xmas.js");
+var reverse = (argv.r=="true"?true:false);
 
+ImageToJS.writeToFile(source,image,out,{reverse:reverse}).then(function(code){
 
-program
-    .command('parse ')
-    .option('-s, --source', 'js源路径')
-    .option('-i, --image', '图片路径')
-    .option('-o, --out', '路径')
-    .option('-r, --reverse', '是否翻转')
-    .description('生成')
-    .action(function(s,options) {
-        console.log(options);
+});
 
-    });
-
-    var output = options.source.replace(".js",".xmas.js");
-
-    ImageToJS.writeToFile(options.source,(options.image||"./tree.png"),(options.out||output),{reverse:options.reverse||false},function(e,code){
-        console.log(code);
-    })
-
-program.parse(process.argv); // 这行必须是结尾

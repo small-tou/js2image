@@ -2,6 +2,8 @@ var fs = require("fs");
 var ImageToStruct = require("./utils/image-to-struct.js");
 var JSMin = require("./utils/js-min.js");
 var KeepLine = require("./utils/keep-line.js");
+var Promise = require("bluebird");
+
 var ImageToJS = function(jsPath,imagePath,options,callback){
     ImageToStruct(imagePath,options).then(function(struct){
         JSMin(jsPath).then(function(code){
@@ -51,15 +53,22 @@ module.exports = {
      * @param options
      * @param callback
      */
-    writeToFile:function(jsPath,imagePath,outputPath,options,callback){
-        ImageToJS(jsPath,imagePath,options,function(e,code){
-            fs.writeFileSync(outputPath,code,'utf-8');
+    writeToFile:function(jsPath,imagePath,outputPath,options){
+
+        return new Promise(function(resolve,reject){
+            ImageToJS(jsPath,imagePath,options,function(e,code){
+                fs.writeFileSync(outputPath,code,'utf-8');
+                resolve(code);
+            })
         })
     },
-    getCode:function(jsPath,imagePath,options,callback){
-        ImageToJS(jsPath,imagePath,options,function(e,code){
-            callback(e,code);
+    getCode:function(jsPath,imagePath,options){
+        return new Promise(function(resolve,reject){
+            ImageToJS(jsPath,imagePath,options,function(e,code){
+                resolve(code);
+            })
         })
+
     }
 };
 /**

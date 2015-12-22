@@ -11,7 +11,6 @@ var Promise = require("bluebird");
  */
 module.exports = function(imagePath,options,callback){
   return new Promise(function(resolve,reject){
-    console.log(_.extend({path:imagePath,colored:false,pixels:['☃',' '],reverse:false},options))
     ImageToAscii(_.extend({path:imagePath,colored:false,pixels:['☃',' '],reverse:false},options), function(err, converted) {
       var content = converted.replace(/\S\[0m/g,"").replace(/\n/g,"\",\n\"");
       var arr = [];

@@ -6,7 +6,7 @@ var ImageToJS = require("./index.js");
 //  console.log(struct)
 //})
 
-ImageToJS.getCode("./source.js","./tree.png",{},function(e,code){
+ImageToJS.getCode("./resource/source.js","./resource/tree.png",{}).then(function(code){
     console.log(code);
 })
 
