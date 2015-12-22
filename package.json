@@ -1,0 +1,29 @@
+{
+  "author": {
+    "email": "xinyu198736@gmail.com",
+    "name": "yutou",
+    "url": "https://github.com/xinyu198736"
+  },
+  "dependencies": {
+    "bluebird": "^3.1.1",
+    "image-to-ascii": "*",
+    "uglify-js": "^2.6.1",
+    "underscore": "*"
+  },
+  "description": "用js代码和图片，生成一段可以正常运行的图形化的js源代码",
+  "keywords": [],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/xinyu198736/image-to-js.git/blob/master/license.md"
+  },
+  "name": "image-to-js",
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xinyu198736/image-to-js.git"
+  },
+  "version": "0.0.1",
+  "bin": {
+    "image-to-js": "./bin/cli"
+  }
+}
