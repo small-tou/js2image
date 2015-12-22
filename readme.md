@@ -61,3 +61,7 @@ Js2Image.writeToFile("./resource/jquery.js","./resource/tree.png",{}).then(funct
 
 
 ````
+
+#编译后的效果图
+
+![](http://7o52oq.com2.z0.glb.qiniucdn.com/Slice%201.png)
