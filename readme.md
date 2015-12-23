@@ -73,7 +73,8 @@ var target = './target/xmas.js';
 var options = {};
 
 // 获取结果的code
-Js2Image.getCode(source, image, options).then(function (code) {
+var sourceCode = fs.readFileSync(source);
+Js2Image.getCode(sourceCode, image, options).then(function (code) {
   // code为生成的代码
   console.log(code);
 })
