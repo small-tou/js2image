@@ -1,5 +1,7 @@
 ENGLISH DOC :[click me](https://github.com/xinyu198736/js2image/blob/master/readme_en.md)
 
+EN summary: a Tool that can compress js source code to any ascii image,after that the result code can still run normal
+
 **警告：压缩后的js请人工确认后再投入生产使用，不保证100%可运行，目前测试的js以及souche.com官网的js都已经试验过，基本可以保证99%的js压缩后没有问题
 
 # who am i?
