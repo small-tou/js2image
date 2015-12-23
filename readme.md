@@ -44,9 +44,9 @@ $ npm install js2image -g
 
 ```bash
 # 直接在命令行里执行此命令即可压缩，默认压缩出一个xmas.js后缀的文件。
-# -s 源代码路径
-# -r 是否反相图像
-# -i 指定使用的图片的路径，默认使用 ./resource/tree.png
+# -s 源代码路径 必须的参数！
+# -r 是否反相图像 可省
+# -i 指定使用的图片的路径，默认使用 ./resource/tree.png 可省
 
 $ js2image -s ./resource/jquery.js
 
