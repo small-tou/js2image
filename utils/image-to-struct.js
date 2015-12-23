@@ -3,7 +3,7 @@ var ImageToAscii = require("image-to-ascii");
 var fs = require("fs");
 var _ = require("underscore");
 var Promise = require("bluebird");
-
+var path = require("path");
 /**
  * 将图片转换成一个可以用来处理的数组结构，用特殊字符填充结构形成字符画。
  * @param imagePath image path
@@ -11,7 +11,7 @@ var Promise = require("bluebird");
  */
 module.exports = function(imagePath,options,callback){
   if(!imagePath){
-    imagePath = "./../resource/tree.png";
+    imagePath = path.join(__dirname , "./../resource/tree.png");
   }
   return new Promise(function(resolve,reject){
     ImageToAscii(_.extend({path:imagePath,colored:false,pixels:['☃',' '],reverse:false},options), function(err, converted) {

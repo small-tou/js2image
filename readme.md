@@ -4,6 +4,8 @@
 
 **js2image** 是一个可以把`js源代码`压缩成一个`ascii字符画`的源代码的工具，它的特色是压缩后的代码仍可运行，而不是简单的拼成最终的图案。
 
+关于js2image的原理可以见我写的这篇详解文章：![圣诞节，把网站所有的js代码都压缩成圣诞树吧。](http://zhuanlan.zhihu.com/yutou/20439979)
+
 # 压缩后的示例，亲测可用
 
 http://f2e.souche.com/assets/js/lib/jquery-2.1.1.min.xmas.js
