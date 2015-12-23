@@ -51,16 +51,19 @@ var other_operator = ['return function', 'throw new Error']
 //根据正则保留在一行。
 var reg_operator = [
     {
-        start:"return",
-        reg:/^return[^a-zA-Z_0-1"'][a-zA-Z_0-1.]+/ // return 0.1 或者 return function 或者return aaabb
-    },
-    {
         start:"return\"",
         reg:/^return".*?"/ // return "d" 或者 return ""
     },
     {
         start:"return\'",
         reg:/^return'.*?'/  // return 'd' 或者 return ''
+    },{
+        start:"return\/",
+        reg:/^return\/.+?\/[igm]*/  // return//g 或者 return ''
+    },
+    {
+        start:"return",
+        reg:/^return[^a-zA-Z_0-1"'][a-zA-Z_0-1.]+/ // return 0.1 或者 return function 或者return aaabb
     },
     {
         start:"throw",
