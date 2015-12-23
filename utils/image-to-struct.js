@@ -10,6 +10,9 @@ var Promise = require("bluebird");
  * @param options {reverse:true/false}
  */
 module.exports = function(imagePath,options,callback){
+  if(!imagePath){
+    imagePath = "./../resource/tree.png";
+  }
   return new Promise(function(resolve,reject){
     ImageToAscii(_.extend({path:imagePath,colored:false,pixels:['☃',' '],reverse:false},options), function(err, converted) {
       if(err) console.log(err);
