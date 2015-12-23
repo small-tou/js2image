@@ -63,7 +63,7 @@ var reg_operator = [
     },
     {
         start:"return",
-        reg:/^return[^a-zA-Z_0-1"'][a-zA-Z_0-1.]+/ // return 0.1 或者 return function 或者return aaabb
+        reg:/^return[^a-zA-Z_0-1"'};][a-zA-Z_0-1.]+/ // return 0.1 或者 return function 或者return aaabb
     },
     {
         start:"throw",
@@ -108,6 +108,7 @@ function pickFromCode(str){
         var last_char = i>0?str[i-1]:null;
         var last_two_char = i>1?str[i-2]:null;
         var last_three_char = i>2?str[i-3]:null;
+        var last_four_char = i>3?str[i-4]:null;
         var next_char = i<(str.length-1)?str[i+1]:null;
         var next_two_char = i<(str.length-2)?str[i+2]:null;
         var next_three_char = i<(str.length-3)?str[i+3]:null;
@@ -247,8 +248,10 @@ function pickFromCode(str){
             }else{
                 //如果现在在字符串里
                 if(now_char=="/"){
-                    //探测到字符串引号出现，首先判断不是转义的。
-                    if(last_char!="\\"||(last_char=="\\"&&last_two_char=="\\"&&last_three_char!="\\")){ //
+                    //探测到字符串出现，首先判断不是转义的。
+                    if(last_char!="\\"||
+                        (last_char=="\\"&&last_two_char=="\\"&&last_three_char!="\\")
+                    ||(last_char=="\\"&&last_two_char=="\\"&&last_three_char=="\\"&&last_four_char=="\\")){ //
                         pickEnd_reg = i;
                         is_in_reg = false;
                         if("gim".indexOf(next_char)!=-1){
