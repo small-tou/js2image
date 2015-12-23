@@ -1,4 +1,4 @@
-**PS: 还有少许bug，一些基本的代码肯定可以用了，一些比较复杂的框架还需要再修正一下，后续会出一篇原理文章，欢迎star，follow。**
+**警告：压缩后的js请人工确认后再投入生产使用，不保证100%可运行，目前测试的js以及souche.com官网的js都已经试验过，基本可以保证99%的js压缩后没有问题
 
 # who am i?
 
@@ -49,6 +49,9 @@ $ npm install js2image -g
 # -i 指定使用的图片的路径，默认使用 ./resource/tree.png
 
 $ js2image -s ./resource/jquery.js
+
+# 新增支持打包一个文件夹内所有js文件，慎用！不保证打包后的js100%运行正常，请经过人工测试确认。
+$ js2image -s ./resource
 ```
 
 # 在Node.js中使用
