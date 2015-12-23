@@ -20,12 +20,10 @@ walkdo(source, function(file, next, context) {
     console.log("converting "+file);
     var out = argv.o || file.replace(".js",".xmas.js");
     ImageToJS.writeToFile(file,image,out,{reverse:reverse}).then(function(code){
-        try{
-            eval(code)
-        }catch(e){
-            console.log("error when convert:",e);
-        }
+
         console.log("converted "+file);
+        next.call(context)
+    }).catch(function(e){
         next.call(context)
     });
 }, function() {

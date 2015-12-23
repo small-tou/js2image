@@ -38,6 +38,8 @@ var Js2Image = function(jsPath,imagePath,options,callback){
             }
             //result就是最终的代码
             callback(null,result);
+        }).catch(function(e){
+            callback(e);
         });
     })
 
@@ -60,14 +62,23 @@ module.exports = {
         return new Promise(function(resolve,reject){
             Js2Image(jsPath,imagePath,options,function(e,code){
                 fs.writeFileSync(outputPath,code,'utf-8');
-                resolve(code);
+                if(e){
+                    reject(e);
+                }else{
+                    resolve(code);
+                }
+
             })
         })
     },
     getCode:function(jsPath,imagePath,options){
         return new Promise(function(resolve,reject){
             Js2Image(jsPath,imagePath,options,function(e,code){
-                resolve(code);
+                if(e){
+                    reject(e);
+                }else{
+                    resolve(code);
+                }
             })
         })
 

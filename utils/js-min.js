@@ -11,10 +11,12 @@ module.exports = function(jsPath,callback){
             ast.compute_char_frequency();
             ast.mangle_names();
             var code = ast.print_to_string();
+            resolve(code);
         }catch(e){
             console.log('js minify error:',e)
+            reject(e);
         }
 
-        resolve(code);
+
     })
 }
