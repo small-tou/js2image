@@ -92,3 +92,22 @@ Js2Image.writeToFile(source, image, target, options).then(function (code) {
   console.log(code);
 });
 ```
+
+
+#others
+
+有网友反馈某些电脑上会报错,还没搞清楚情况.
+```
+onverting ./resource/release.js
+[Error: Could not execute GraphicsMagick/ImageMagick: gm "identify" "-ping" "-format" "%wx%h" "/usr/local/lib/node_modules/js2image/resource/tree.png" 
+this most likely means the gm/convert binaries can't be found]
+/usr/local/lib/node_modules/js2image/utils/image-to-struct.js:19
+      var content = converted.replace(/\S\[0m/g,"").replace(/\n/g,"\",\n\"");
+                             ^
+
+TypeError: Cannot read property 'replace' of undefined
+```
+如遇此种情况,执行以下命令即可,至于是为毛,我也没搞清楚.
+```
+npm install -g replace
+```
