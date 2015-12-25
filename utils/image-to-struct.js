@@ -1,7 +1,7 @@
 
 var ImageToAscii = require("image-to-ascii");
 var fs = require("fs");
-var _ = require("underscore");
+var extend = require('util')._extend;
 var Promise = require("bluebird");
 var path = require("path");
 /**
@@ -14,7 +14,7 @@ module.exports = function(imagePath,options,callback){
     imagePath = path.join(__dirname , "./../resource/tree.png");
   }
   return new Promise(function(resolve,reject){
-    ImageToAscii(_.extend({path:imagePath,colored:false,pixels:['☃',' '],reverse:false},options), function(err, converted) {
+    ImageToAscii(extend({path:imagePath,colored:false,pixels:['☃',' '],reverse:false},options), function(err, converted) {
       if(err) console.log(err);
       var content = converted.replace(/\S\[0m/g,"").replace(/\n/g,"\",\n\"");
       var arr = [];
