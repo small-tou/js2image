@@ -42,7 +42,7 @@ Execute the following command to install global command：
 $ npm install js2image -g
 ```
 
-useage：
+usage：
 
 ```bash
 # Execute this command directly from the command line to compression, default compress a file with the extension xmas.js。
@@ -64,7 +64,7 @@ run this commands：
 $ npm install js2image --save
 ```
 
-useage：
+usage：
 
 ```javascript
 var Js2Image = require('js2image');
@@ -77,14 +77,11 @@ var options = {};
 // get the result code
 var sourceCode = fs.readFileSync(source);
 Js2Image.getCode(sourceCode, image, options).then(function (code) {
-  // code为生成的代码
   console.log(code);
 })
 
 // or write into file
 Js2Image.writeToFile(source, image, target, options).then(function (code) {
-  // 生成的代码已被写入到文件target
-  // code为生成的代码
   console.log(code);
 });
 ```
