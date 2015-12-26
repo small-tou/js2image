@@ -15,7 +15,7 @@ module.exports = function(imagePath,options,callback){
   }
   return new Promise(function(resolve,reject){
     ImageToAscii(_.extend({path:imagePath,colored:false,pixels:['☃',' '],reverse:false},options), function(err, converted) {
-      if(err) console.log(err);
+      if(err) return reject(err);
       var content = converted.replace(/\S\[0m/g,"").replace(/\n/g,"\",\n\"");
       var arr = [];
       converted.replace(/\S\[0m/g,"").split("\n").forEach(function(c){
