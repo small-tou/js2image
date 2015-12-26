@@ -42,7 +42,7 @@ Execute the following command to install global command：
 $ npm install js2image -g
 ```
 
-useage：
+usage：
 
 ```bash
 # Execute this command directly from the command line to compression, default compress a file with the extension xmas.js。
@@ -64,7 +64,7 @@ run this commands：
 $ npm install js2image --save
 ```
 
-useage：
+usage：
 
 ```javascript
 var Js2Image = require('js2image');
