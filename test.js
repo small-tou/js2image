@@ -1,6 +1,6 @@
 var Js2Image = require("./index.js");
 var path = require("path");
-var source = "./resource/stats.js";
+var source = "./resource/jquery.js";
 var image = path.join(__dirname,"./resource/tree.png");
 var out = source.replace(".js",".xmas.js");
 

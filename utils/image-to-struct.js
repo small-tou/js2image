@@ -14,7 +14,7 @@ module.exports = function(imagePath,options,callback){
     imagePath = path.join(__dirname , "./../resource/tree.png");
   }
   return new Promise(function(resolve,reject){
-    ImageToAscii(_.extend({path:imagePath,colored:false,pixels:['☃',' '],reverse:false},options), function(err, converted) {
+    ImageToAscii(imagePath, _.extend({colored:false,pixels:['☃',' '],reverse:false},options), function(err, converted) {
       if(err) return reject(err);
       var content = converted.replace(/\S\[0m/g,"").replace(/\n/g,"\",\n\"");
       var arr = [];
