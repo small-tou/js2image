@@ -65,6 +65,7 @@ $ js2image -s ./resource/jquery.js -i ./resource/tree.png
 # 注意
 
 * 图片需要是白底的，不能是透明的
+* 不支持 windows 系统
 
 # 在Node.js中使用
 
