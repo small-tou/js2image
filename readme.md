@@ -60,6 +60,10 @@ $ js2image -s ./resource/jquery.js
 $ js2image -s ./resource
 ```
 
+# 注意
+
+* 图片需要是白底的，不能是透明的
+
 # 在Node.js中使用
 
 执行以下命令安装模块：
@@ -93,6 +97,26 @@ Js2Image.writeToFile(source, image, target, options).then(function (code) {
 });
 ```
 
+**关于 options 可用值（可以调节像素等参数）**:
+  - `pxWidth` (Number): The pixel width used for aspect ratio (default: `2`).
+  - `size` (Object): The size of the result image (ASCII art)—interpreted by
+    [`compute-size`](https://github.com/IonicaBizau/compute-size):
+    - `height` (Number|String): The height value (default: `"100%"`).
+    - `width` (Number|String): The width value (default: computed value to
+       keep aspect ratio). This is optional if the height is provided.
+  - `size_options` (Object): The options for
+    [`compute-size`](https://github.com/IonicaBizau/compute-size):
+    - `screen_size` (Object): The screen size (defaults to terminal width
+    and height):
+        - `width` (Number): The screen width.
+        - `height` (Number): The screen height.
+    - `px_size` (Object): The pixel size.
+        - `width` (default: `1`)
+        - `height` (default: `1`)
+    - `preserve_aspect_ratio` (Boolean): If `false`, the aspect ratio will
+      not be preserved (default: `true`).
+    - `fit_screen` (Boolean): If `false`, the result size will not fit to
+      screen (default: `true`).
 
 #others
 
