@@ -58,6 +58,8 @@ $ js2image -s ./resource/jquery.js
 
 # 新增支持打包一个文件夹内所有js文件，慎用！不保证打包后的js100%运行正常，请经过人工测试确认。
 $ js2image -s ./resource
+
+$ js2image -s ./resource/jquery.js -i ./resource/tree.png
 ```
 
 # 注意
