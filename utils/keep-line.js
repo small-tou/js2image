@@ -238,7 +238,7 @@ function pickFromCode(str){
         //如果现在不在字符串里。
         if(!is_in_single_quot&&!is_in_double_quot){
             if(!is_in_reg){
-                if(now_char=="/"&&last_char!="<"&&!/[0-9a-zA-Z_)]/.test(last_char)){
+                if(now_char=="/"&&last_char!="<"&&!/[0-9a-zA-Z_)\]]/.test(last_char)){
                     //探测到字符串引号出现，首先判断不是转义的。
                     if(last_char!="\\"&&last_char!="\""&&last_char!="\'"){
                         pickStart_reg = i;
