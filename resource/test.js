@@ -1,0 +1,1 @@
+price_info+="价格：$"+(res[type]['perkg']/100).toFixed(2)+"/kg ";

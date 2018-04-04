@@ -1,6 +1,6 @@
 var Js2Image = require("./index.js");
 var path = require("path");
-var source = "./resource/vue.js";
+var source = "./resource/test.js";
 var image = path.join(__dirname,"./resource/happy.png");
 var out = source.replace(".js",".xmas.js");
 

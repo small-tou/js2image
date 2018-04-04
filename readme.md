@@ -75,7 +75,7 @@ $ js2image -s ./resource/jquery.js -i ./resource/tree.png
 $ npm install js2image --save
 ```
 
-使用方法：
+使用方法（见 example/test.js ）：
 
 ```javascript
 var Js2Image = require('js2image');
