@@ -12,10 +12,8 @@ module.exports = function(source,callback){
             var code = ast.print_to_string();
             resolve(code);
         }catch(e){
-            console.log('js minify error:',e)
+            console.log('js minify error:',e);
             reject(e);
         }
-
-
     })
-}
+};
