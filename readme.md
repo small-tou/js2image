@@ -1,8 +1,3 @@
-<p align="center">
-  <b>Thanks to Souche Inc. which provides the server to hold an online service.</b>
-  <br><br>
- 
-</p>
 
 ENGLISH DOC :[click me](https://github.com/xinyu198736/js2image/blob/master/readme_en.md)
 
